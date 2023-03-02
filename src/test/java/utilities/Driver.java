@@ -4,10 +4,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 public class Driver {
 
+    private Driver(){
+
+    }
     /* Daha fazla kontrol imkani ve extends kullanmadan driver'a ulasmak icin
        webDriver objesini Driver class'indaki static bir method ile olusturacagiz
       Ancak getDriver() her kullanildiginda yeni bir driver olusturuyor
@@ -20,10 +25,30 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        WebDriverManager.edgedriver().setup();
+        String istenenBrowser = ConfigReader.getProperty("browser");
+
 
         if (driver==null) {
-            driver = new EdgeDriver();
+
+            switch (istenenBrowser) {
+
+                case "firefox" :
+                    WebDriverManager.firefoxdriver().setup();
+                    driver=new FirefoxDriver();
+                    break;
+                case "chrome" :
+                    WebDriverManager.chromedriver().setup();
+                    driver=new ChromeDriver();
+                case "safari" :
+                    WebDriverManager.safaridriver().setup();
+                    driver=new SafariDriver();
+
+                default:
+                    WebDriverManager.edgedriver().setup();
+                    driver=new EdgeDriver();
+
+            }
+
         }
 
         driver.manage().window().maximize();
