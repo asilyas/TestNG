@@ -1,4 +1,4 @@
-package egzersize;
+package tests.egzersize;
 
 
 import org.openqa.selenium.By;
