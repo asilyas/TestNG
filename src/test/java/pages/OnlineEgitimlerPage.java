@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class OnlineEgitimlerPages {
-    public OnlineEgitimlerPages(){
+public class OnlineEgitimlerPage {
+    public OnlineEgitimlerPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 

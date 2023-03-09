@@ -1,5 +1,4 @@
 package tests.egzersize;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
@@ -24,7 +23,7 @@ public class practice2 {
     UdemyHomePage homepage=new UdemyHomePage();
     LoginPage loginPage=new LoginPage();
     MyPage myPage=new MyPage();
-    OnlineEgitimlerPages online=new OnlineEgitimlerPages();
+    OnlineEgitimlerPage online=new OnlineEgitimlerPage();
     KimlikDogrulama kimlik=new KimlikDogrulama();
     @Test
     public void test01(){
