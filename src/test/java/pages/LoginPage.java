@@ -21,7 +21,7 @@ public class LoginPage {
     public WebElement submitButton;
 
     public void loginBilgiler(){
-        loginEmailBox.sendKeys(ConfigReader.getProperty("email"));
+        loginEmailBox.sendKeys(ConfigReader.getProperty("emailUdemy"));
         loginPasswordBox.sendKeys(ConfigReader.getProperty("password"));
         submitButton.click();
     }

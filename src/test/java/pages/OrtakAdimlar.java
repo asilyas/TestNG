@@ -22,7 +22,7 @@ public class OrtakAdimlar {
 
     public void loginBilgiler(){
         Driver.getDriver().get("https://www.iienstitu.com/en");
-        loginEmailBox.sendKeys(ConfigReader.getProperty("email"));
+        loginEmailBox.sendKeys(ConfigReader.getProperty("emailUdemy"));
         loginPasswordBox.sendKeys(ConfigReader.getProperty("password"));
         submitButton.click();
     }

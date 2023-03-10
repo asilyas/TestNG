@@ -31,7 +31,7 @@ public class practice2 {
         // Login butonuna tiklar
         homepage.loginButtonHomePage.click();
         // Giris bilgilerini girer ve basarili sekilde giris yaptigini test eder
-        loginPage.loginEmailBox.sendKeys(ConfigReader.getProperty("email"));
+        loginPage.loginEmailBox.sendKeys(ConfigReader.getProperty("emailUdemy"));
         loginPage.loginPasswordBox.sendKeys(ConfigReader.getProperty("password"));
         loginPage.submitButton.click();
         Assert.assertTrue(myPage.loggedCheckControl.isDisplayed());
@@ -45,7 +45,7 @@ public class practice2 {
         online.hemenBaslaButton.click();
         // kimlik dogrulama islemlerini girer
         Actions actions=new Actions(Driver.getDriver());
-        actions.sendKeys(kimlik.kimlikDogrulamMail,ConfigReader.getProperty("email")).
+        actions.sendKeys(kimlik.kimlikDogrulamMail,ConfigReader.getProperty("emailUdemy")).
                 sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).
